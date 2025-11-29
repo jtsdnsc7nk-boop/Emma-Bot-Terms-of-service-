@@ -1,59 +1,92 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Terms of Service – EmmaBot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #eee;
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            line-height: 1.7;
-        }
-        h1 {
-            color: #ff4da6;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #ff8ccf;
-            margin-top: 40px;
-        }
-        .card {
-            background: #1b1b1b;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            box-shadow: 0 0 10px #000;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Terms of Service – EmmaBot</title>
+<style>
+body {font-family: Arial, sans-serif; background:#111; color:#eee; max-width:900px; margin:auto; padding:40px; line-height:1.7;}
+h1 {color:#ff4da6; text-align:center; margin-bottom:20px;}
+h2 {color:#ff8ccf; margin-top:40px;}
+.card {background:#1b1b1b; padding:25px; border-radius:12px; border:1px solid #333; box-shadow:0 0 10px #000;}
+a {color:#ff4da6; text-decoration:none;}
+a:hover {text-decoration:underline;}
+.lang-btn {margin-top:30px; padding:10px 20px; background:#ff4da6; border:none; border-radius:8px; cursor:pointer; color:#111; font-weight:bold;}
+</style>
 </head>
 <body>
 
-<h1>Terms of Service – EmmaBot</h1>
+<h1 id="title">Terms of Service – EmmaBot</h1>
 
-<div class="card">
-    <h2>1. Opis</h2>
-    <p>EmmaBot to bot rozrywkowy. Wysyła embed z obrazkami do złapania oraz różne funkcje zabawowe związane z celebrytką Emmą Myers.</p>
+<div class="card" id="content">
+<h2>1. Opis</h2>
+<p>EmmaBot to bot rozrywkowy. Wysyła embed z obrazkami do złapania oraz różne funkcje zabawowe związane z celebrytką Emmą Myers.</p>
 
-    <h2>2. Zasady korzystania</h2>
-    <p>Jeśli chcesz korzystać z bota, oznacz właściciela na serwerze, a najlepiej przyznaj mu rolę <b>bot helpera</b>, żeby mógł ogarniać sprawy techniczne.</p>
+<h2>2. Zasady korzystania</h2>
+<p>Jeśli chcesz korzystać z bota, oznacz właściciela na serwerze, a najlepiej przyznaj mu rolę <b>bot helpera</b>.</p>
 
-    <h2>3. Zachowanie użytkowników</h2>
-    <p>Nie spamuj komend. Bot nie jest twoim niewolnikiem – jak go zajedziesz, to nie odpowiadam.</p>
+<h2>3. Zachowanie użytkowników</h2>
+<p>Nie spamuj komend. Bot nie jest twoim niewolnikiem – jak go zajedziesz, to nie odpowiadam.</p>
 
-    <h2>4. Dane</h2>
-    <p>Bot może przechowywać podstawowe informacje techniczne (ID użytkownika, serwera, użyte komendy). Nie przechowuje prywatnych wiadomości.</p>
+<h2>4. Dane</h2>
+<p>Bot może przechowywać podstawowe informacje techniczne (ID użytkownika, serwera, użyte komendy). Nie przechowuje prywatnych wiadomości.</p>
 
-    <h2>5. Odpowiedzialność</h2>
-    <p>Nie odpowiadam za bany, bugi, awarie, pożary, eksplozje, ani katastrofy społeczne spowodowane używaniem bota.</p>
+<h2>5. Odpowiedzialność</h2>
+<p>Nie odpowiadam za bany, bugi, awarie, pożary ani katastrofy społeczne spowodowane używaniem bota.</p>
 
-    <h2>6. Aktualizacje</h2>
-    <p>Regulamin może zostać zmieniony w dowolnym momencie. Korzystanie z bota oznacza akceptację zmian.</p>
+<h2>6. Aktualizacje</h2>
+<p>Regulamin może zostać zmieniony w dowolnym momencie. Korzystanie z bota oznacza akceptację zmian.</p>
+
+<h2>7. Privacy Policy</h2>
+<p>Pełną politykę prywatności znajdziesz tutaj: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Privacy-Policy/">Privacy Policy – EmmaBot</a></p>
 </div>
+
+<button class="lang-btn" onclick="switchLanguage()">EN / PL</button>
+
+<script>
+let isPL = true;
+function switchLanguage() {
+    const title = document.getElementById('title');
+    const content = document.getElementById('content');
+    if(isPL){
+        title.innerText = "Terms of Service – EmmaBot";
+        content.innerHTML = `
+        <h2>1. Description</h2>
+        <p>EmmaBot is an entertainment bot. Sends embeds with catchable images and fun features related to celebrity Emma Myers.</p>
+        <h2>2. Usage Rules</h2>
+        <p>If you want to use the bot, mention the owner on the server or give them the <b>bot helper</b> role.</p>
+        <h2>3. User Conduct</h2>
+        <p>Do not spam commands. The bot is not your slave – if you abuse it, I am not responsible.</p>
+        <h2>4. Data</h2>
+        <p>The bot may store basic technical information (user ID, server ID, used commands). It does not store private messages.</p>
+        <h2>5. Liability</h2>
+        <p>I am not responsible for bans, bugs, crashes, fires, or social disasters caused by using the bot.</p>
+        <h2>6. Updates</h2>
+        <p>The Terms can be updated at any time. Using the bot means accepting the changes.</p>
+        <h2>7. Privacy Policy</h2>
+        <p>Full privacy policy here: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Privacy-Policy/">Privacy Policy – EmmaBot</a></p>
+        `;
+    } else {
+        title.innerText = "Terms of Service – EmmaBot";
+        content.innerHTML = `
+        <h2>1. Opis</h2>
+        <p>EmmaBot to bot rozrywkowy. Wysyła embed z obrazkami do złapania oraz różne funkcje zabawowe związane z celebrytką Emmą Myers.</p>
+        <h2>2. Zasady korzystania</h2>
+        <p>Jeśli chcesz korzystać z bota, oznacz właściciela na serwerze, a najlepiej przyznaj mu rolę <b>bot helpera</b>.</p>
+        <h2>3. Zachowanie użytkowników</h2>
+        <p>Nie spamuj komend. Bot nie jest twoim niewolnikiem – jak go zajedziesz, to nie odpowiadam.</p>
+        <h2>4. Dane</h2>
+        <p>Bot może przechowywać podstawowe informacje techniczne (ID użytkownika, serwera, użyte komendy). Nie przechowuje prywatnych wiadomości.</p>
+        <h2>5. Odpowiedzialność</h2>
+        <p>Nie odpowiadam za bany, bugi, awarie, pożary ani katastrofy społeczne spowodowane używaniem bota.</p>
+        <h2>6. Aktualizacje</h2>
+        <p>Regulamin może zostać zmieniony w dowolnym momencie. Korzystanie z bota oznacza akceptację zmian.</p>
+        <h2>7. Privacy Policy</h2>
+        <p>Pełną politykę prywatności znajdziesz tutaj: <a href="https://jtsdnsc7nk-boop.github.io/Emma-Bot-Privacy-Policy/">Privacy Policy – EmmaBot</a></p>
+        `;
+    }
+    isPL = !isPL;
+}
+</script>
 
 </body>
 </html>
